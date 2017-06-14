@@ -2,4 +2,4 @@ nova boot \
 --image d8c28e3a-751f-4cba-8ce7-a7c1a5a9015b  \
 --flavor m2.small \
 --user-data  setup_test_enviroment.sh \
-my-vm3
+my-vm4
