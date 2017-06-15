@@ -5,6 +5,7 @@ echo ""
 echo "git clone https://github.com/pintjuk/cloud_setup_scripts.git"
 git clone https://github.com/pintjuk/cloud_setup_scripts.git
 cd cloud_setup_scripts
+git submodule update --init
 echo ""
 echo "yum install gcc-c++.x86_64"
 yes | yum install gcc-c++.x86_64
@@ -40,6 +41,8 @@ pip install SOAPpy
 # yum install cvmfs cvmfs-config-default
 # cvmfs_config setup
 cd cloud-benchmark-suite
+echo "did the submodule get downlroaded?"
+ls
 echo ""
 echo "building benchmarks"
 make all
