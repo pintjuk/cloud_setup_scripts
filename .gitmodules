@@ -1,6 +1,6 @@
 [submodule "s3test"]
 	path = s3test
-	url = ssh://git@gitlab.cern.ch:7999/okeeble/s3test.git
+	url = https://gitlab.cern.ch/okeeble/s3test.git
 [submodule "cloud-benchmark-suite"]
 	path = cloud-benchmark-suite
-	url = ssh://git@gitlab.cern.ch:7999/cloud-infrastructure/cloud-benchmark-suite.git
+	url = https://gitlab.cern.ch/cloud-infrastructure/cloud-benchmark-suite.git
