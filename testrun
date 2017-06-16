@@ -4,5 +4,5 @@ cern-benchmark \
 	--vo=ATLAS \
 	--public_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'` \
 	--uid=`hostname`_$(date -d  "`who -b | sed -e 's@system boot @@'`" +%s) --cloud=CERN \
-	--queue_host=128.141.28.34 --queue_port=61613 --username=admin \
+	--queue_host=188.185.72.19--queue_port=61613 --username=admin \
 	--password=admin --topic=cernBenchTest
