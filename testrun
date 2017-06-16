@@ -1,8 +1,14 @@
-
-cern-benchmark \
-	--benchmarks="kv;DB12;whetstone" \
-	--vo=ATLAS \
-	--public_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'` \
-	--uid=`hostname`_$(date -d  "`who -b | sed -e 's@system boot @@'`" +%s) --cloud=CERN \
-	--queue_host=188.185.72.19 --queue_port=61613 --username=admin \
-	--password=admin --topic=testResults
+#! /bin/bash
+i=0
+while [[$i -lt $ITERATIONS]]
+do
+	cern-benchmark \
+		--benchmarks=$Benchmarks\
+		--vo=ATLAS \
+		--public_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'` \
+		--uid=`hostname`_$(date -d  "`who -b | sed -e 's@system boot @@'`" +%s) --cloud=CERN \
+		--queue_host=$ActivemqHost --queue_port=$ActivemqPort --username=$ActivemqName \
+		--password=$ActivemqPswd --topic=$QueueName \
+                --freetext='{run: $i}' &
+	i=$[$i+1]
+done
