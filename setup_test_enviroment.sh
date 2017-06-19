@@ -2,8 +2,8 @@
 
 # configure tests here
 export ITERATIONS=4
-#export Benchmarks="kv;DB12;whetstone" 
-export Benchmarks="kv" 
+export Benchmarks="kv;DB12;whetstone" 
+#export Benchmarks="kv" 
 export ActivemqHost="188.185.72.19"
 export ActivemqPort="61613"
 export ActivemqName="admin"
