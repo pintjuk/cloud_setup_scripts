@@ -1,0 +1,14 @@
+*#*#
+*.aux
+*.bbl
+*.blg
+*.div
+*.html
+*.log
+*.out
+*.pdf
+*.tex
+*.toc
+*~
+*.dvi
+
