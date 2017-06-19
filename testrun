@@ -1,14 +1,16 @@
 #! /bin/bash
 i=0
-while [[$i -lt $ITERATIONS]]
+while [[ $i -lt $ITERATIONS ]]
 do
-	cern-benchmark \
+	echo "*** ITERATION:$i ***"
+        echo "" 
+	(cern-benchmark \
 		--benchmarks=$Benchmarks\
 		--vo=ATLAS \
 		--public_ip=`curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'` \
 		--uid=`hostname`_$(date -d  "`who -b | sed -e 's@system boot @@'`" +%s) --cloud=CERN \
 		--queue_host=$ActivemqHost --queue_port=$ActivemqPort --username=$ActivemqName \
 		--password=$ActivemqPswd --topic=$QueueName \
-                --freetext='{run: $i}' &
+                --freetext='{run: $i}'|| exit 1)
 	i=$[$i+1]
 done
