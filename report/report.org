@@ -1,0 +1,39 @@
+#+TITLE:      HNScieCloud Prototype Phase Testing
+#+AUTHOR:     Daniil Pintjuk
+#+EMAIL:      daniil.pintjuk@cern.ch
+#+HTML_HEAD:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
+#+LANGUAGE:   en
+#+BIBLIOGRAPHY: refs plain
+
+* Introduction
+
+* Method
+
+** Tests
+aoeu \cite{s3test}
+aoeu
+\cite{s3test}
+
+*** Eudigan AAI
+These tests relate to evaluating compliance with eduGAIN login 
+requirements. 
+
+
+*** CERN Benchmark Suite
+
+
+*** S3 endpoint test
+
+* Results
+
+** T-Systems, Huawei, Cyfronet, Divia   
+*** Eudigan AAI
+*** CERN Benchmark Suite
+*** S3 endpoint test
+
+** IBM
+** T-Systems, Huawei, Cyfronet, Divia
+** IBM
+** RHEA Group, T-Systems, exoscale, Sixsq
+* Evaluation
+
