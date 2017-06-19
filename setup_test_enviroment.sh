@@ -60,7 +60,12 @@ then
 	echo "building benchmarks"
 	make all
 	echo ""
+else
+	
+	cd cloud_setup_scripts
+	cd cloud-benchmark-suite
 fi
+
 touch /tmp/.allsetup
 
 echo "runing benchmarks"
