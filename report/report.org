@@ -1,33 +1,162 @@
-#+TITLE:      HNScieCloud Prototype Phase Testing
+#+TITLE:      HNScieCloud Testing Period 2
 #+AUTHOR:     Daniil Pintjuk
 #+EMAIL:      daniil.pintjuk@cern.ch
 #+HTML_HEAD:      <style type="text/css">#outline-container-introduction{ clear:both; }</style>
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{}
+#+LATEX_HEADER: \lhead{\includegraphics[height=1.5cm]{logo}}
+#+LATEX_HEADER: \rfoot{Page \thepage}
+#+LATEX_HEADER: \renewcommand{\headrulewidth}{0pt}
+
+
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{ a4paper, headheight=1.5cm,}
+#+LATEX_HEADER: \usepackage[dvipsnames]{xcolor}
+#+LATEX_HEADER: \usepackage{sectsty} 
+#+LATEX_HEADER: \subsectionfont{\color{NavyBlue}}
+
 #+LANGUAGE:   en
 #+BIBLIOGRAPHY: refs plain
 
-* Introduction
+
+* TODO Introduction
+
+Report for testperioud 2
+
+** Assessment Criteria
+The scores to assess the results of the tests are defined as follows:
+#+ATTR_LATEX: :environment tabular :align |l|c|
+|---+--------------------------------------------------------------------------------|
+| 0 | Completely fails to demonstrate  the required capacity and capability for the  |
+|   | defined requirements domain                                                    |
+|---+--------------------------------------------------------------------------------|
+| 1 | Significantly fails to demonstrate required capacity and capability for the    |
+|   | defined requirements domain.                                                   |
+|---+--------------------------------------------------------------------------------|
+| 2 | Shows partial evidence of capacity and capability for the defined requirements |
+|   | domain                                                                         |
+|---+--------------------------------------------------------------------------------|
+| 3 | Shows evidence of capability and capacity for the defined requirements domain  |
+|---+--------------------------------------------------------------------------------|
+| 4 | Shows evidence of capacity and capability that completely meet the defined     |
+|   | requirements domain                                                            |
+|---+--------------------------------------------------------------------------------|
+| 5 | Shows evidence of capacity and capability that systematically exceeds the      |
+|   | defined requirement domain                                                     |
+|---+--------------------------------------------------------------------------------|
+
 
 * Method
 
 ** Tests
-aoeu \cite{s3test}
-aoeu
-\cite{s3test}
 
 *** Eudigan AAI
-These tests relate to evaluating compliance with eduGAIN login 
+These tests relate to evaluating compliance with edugain login 
 requirements. 
+
+The following tests will be run manually:
+
+#+ATTR_LATEX: :environment tabular  :align | r | p{7cm} | p{5cm} | 
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+|   | Tests                                                                                | Expected Result                                                     |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 1 | User attempts authentication from an eduGAIN IdP                                     | Authentication successful                                           |
+|   | with R&S compliant attribute release                                                 |                                                                     |
+|   |                                                                                      |                                                                     |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 2 | User attempts authentication from an eduGAIN IdP with insufficient attribute release | Authentication unsuccessful and helpful error page produced         |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 3 | User attempts authentication from multiple eduGAIN IdPs with credentials             | Authentication resolves to multiple,distinct users                  |
+|   | sharing a common email address                                                       |                                                                     |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 4 | User accesses a permitted resource (e.g. tenant specific data)                       | Authenticated user is granted access                                |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 5 | User accesses a forbidden resource (e.g. tenant specific data)                       | Authenticated user is denied access                                 |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 6 | User is blocked by Admin                                                             | Admin is able to block an individual user                           |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 7 | Blocked user attempts authentication                                                 | Blocked user is denied access                                       |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+| 8 | >10 users authenticate simultaneously                                                | Users authenticate in accordance with Reference Results (1) and (2) |
+|   |                                                                                      |                                                                     |
+|---+--------------------------------------------------------------------------------------+---------------------------------------------------------------------|
+
+
+The tests will be documented in a table with following columns:
+#+ATTR_LATEX: :environment tabular  :align |r|c|c|c|c| 
+|------+-----+--------+--------------------+---------|
+| test | idP | Result | Matches reference? | Comment |
+|------+-----+--------+--------------------+---------|
+|    1 |     |        |                    |         |
+|------+-----+--------+--------------------+---------|
+|    2 |     |        |                    |         |
+|------+-----+--------+--------------------+---------|
+|  ... |     |        |                    |         |
+
+**** TODO Assessment Criteria (Score 0-5):
+
+*** VM Provisioning Validation
+This test consists of a script that checks weather the VM was correctly initilized.
+
+source code for this test can be found on \cite{provision}
+
+
+**** TODO Implementation details
+
+**** TODO Assessment Criteria  
 
 
 *** CERN Benchmark Suite
 
+CERN benchmark suit is a sequence of benchmarks executed on a VM. Results are sent as JASON messages to an ActiveMQ broker. Source code can be found on \cite{benchmark}
+
+**** TODO Specific test configured
+
+**** TODO Assessment Criteria (Score 0-5):
 
 *** S3 endpoint test
+Is a script that attempts the following operations on a specified S3 host
+  - S3 authentication (access key + secret key)
+  - PUT
+  - GET
+  - GET with prefix matching
+  - GET chunk
+  - GET multiple chunks
+
+source for this tests can be found on \cite{s3test}  
+**** TODO Specific test configured
+     
+**** TODO Assessment Criteria (Score 0-5):
+
+
+ #+ATTR_LATEX: :environment tabular  :align | p{10cm}|l|c| 
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | condition                                                                                           | score |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | no operations supported                                                                             |     0 |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | 2 out of AuthC, PUT, GET not supported                                                              |     1 |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | If any of AuthC, PUT or GET are not supported                                                       |     2 |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | If AuthC , PUT and GET are supported                                                                |     3 |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | If AuthC, PUT and GET are  supported  +  oneof  the  2  (GET  with  prefix  matching or GET chunk ) |     4 |
+  |-----------------------------------------------------------------------------------------------------+-------|
+  | If AuthC, PUT and GET are supported + GET with prefix matching and GET chunk                        |     5 |
+  |-----------------------------------------------------------------------------------------------------+-------|
 
 * Results
 
 ** T-Systems, Huawei, Cyfronet, Divia   
 *** Eudigan AAI
+#+ATTR_LATEX: :environment tabular  :align |r|c|c|c|c| 
+|------+-----+--------+--------------------+---------|
+| test | idP | Result | Matches reference? | Comment |
+|------+-----+--------+--------------------+---------|
 *** CERN Benchmark Suite
 *** S3 endpoint test
 
@@ -36,4 +165,8 @@ requirements.
 ** IBM
 ** RHEA Group, T-Systems, exoscale, Sixsq
 * Evaluation
+
+
+#+LATEX: \bibliographystyle{plain}
+#+LATEX: \bibliography{refs}
 
