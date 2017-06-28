@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$	lib/jna-platform-4.1.0.jar	/^¶/;"	external variable declarations
+AccessService	AccessService.java	/^    public AccessService(String serviceName, String region, String ak, String sk) {$/;"	m	class:AccessService
+AccessService	AccessService.java	/^public abstract class AccessService {$/;"	c
+AccessServiceImpl	AccessServiceImpl.java	/^ public AccessServiceImpl(String serviceName, String region, String ak,$/;"	m	class:AccessServiceImpl
+AccessServiceImpl	AccessServiceImpl.java	/^public class AccessServiceImpl extends AccessService {$/;"	c
+CloseableHttpClient	AccessServiceImpl.class	/^/;"	external variable declarations
+Demo	Demo.java	/^public  class Demo {$/;"	c
+GraphicsConfiguration	lib/jna-platform-4.1.0.jar	/^/;"	external variable declarations
+GraphicsDevice	lib/jna-platform-4.1.0.jar	/^/;"	external variable declarations
+GraphicsEnvironment	lib/jna-platform-4.1.0.jar	/^/;"	external variable declarations
+HttpRequestBase	AccessServiceImpl.class	/^Exceptions/;"	external variable declarations
+HttpResponse	AccessServiceImpl.class	/^/;"	external variable declarations
+HttpResponse	AccessServiceImpl.class	/^Exceptions/;"	external variable declarations
+Long	AccessService.class	/^SourceFile/;"	external variable declarations
+PK	lib/java-sdk-core-2.0.5.jar	/^/;"	external variable declarations
+PK	lib/java-sdk-core-2.0.5.jar	/^årnc²ùE€A;ÔÎhÂebı=\\xÊ?Œ*…FHÜ¬dü:V3,õ¶HaP·˜ù¬|PK$/;"	external variable declarations
+PrintStream	AccessService.class	/^SourceFile/;"	external variable declarations
+ST	lib/jna-platform-4.1.0.jar	/^±/;"	external variable declarations
+SïoÒP	lib/java-sdk-core-2.0.5.jar	/^/;"	external variable declarations
+T	lib/java-sdk-core-2.0.5.jar	/^”ƒ,¡F¯ÆÕ¾T‰=)G\\<‹À&Í÷4À¨qI9ÄêÍ¨•lŞ"-9ÇO+¹êh%iYxFÛ…÷ÂÙ0>§”¶J'²”Ü<Êõ¸!L®Jàé¡£ã[¸Ì‰×I`clª~§]~3µ‹¾òÎÙV'pƒ6ÚÑ¤Yo¶uau0Yÿú¯=‡õkƒÉ·¦­şûÌtNÏ¹)›»ã.ÜMOŸ÷áà¼•XgGñ1±G^g–/;"	external variable declarations
+ZQ	lib/httpcore-4.4.6.jar	/^/;"	external variable declarations
+a	Demo.class	/^/;"	external variable declarations
+access	AccessService.java	/^    public HttpResponse access(URL url, HttpMethodName httpMethod) throws Exception {$/;"	m	class:AccessService
+access	AccessService.java	/^    public HttpResponse access(URL url, InputStream content, Long contentLength, HttpMethodName httpMethod)$/;"	m	class:AccessService
+access	AccessService.java	/^    public HttpResponse access(URL url, Map<String, String> header, HttpMethodName httpMethod) throws Exception {$/;"	m	class:AccessService
+access	AccessService.java	/^    public abstract HttpResponse access(URL url, Map<String, String> header, InputStream content, Long contentLength,$/;"	m	class:AccessService
+access	AccessServiceImpl.java	/^ public HttpResponse access(URL url, Map<String, String> headers,$/;"	m	class:AccessServiceImpl
+ak	AccessService.java	/^    protected String ak = null;$/;"	f	class:AccessService
+client	AccessServiceImpl.java	/^ private CloseableHttpClient client = null;$/;"	f	class:AccessServiceImpl	file:
+close	AccessService.java	/^    public abstract void close();$/;"	m	class:AccessService
+close	AccessServiceImpl.java	/^ public void close() {$/;"	m	class:AccessServiceImpl
+com.sun.jna.platform.dnd	lib/jna-platform-4.1.0.jar	/^Export-Package:  com.sun.jna.platform, com.sun.jna.platform.dnd, com.s$/;"	external variable declarations
+com.sun.jna.platform.unix	lib/jna-platform-4.1.0.jar	/^ un.jna.platform.mac, com.sun.jna.platform.unix, com.sun.jna.platform.$/;"	external variable declarations
+com.sun.jna.platform.win32.COM	lib/jna-platform-4.1.0.jar	/^ win32, com.sun.jna.platform.win32.COM, com.sun.jna.platform.win32.COM$/;"	external variable declarations
+com.sun.jna.platform.win32.COM.tlb.imp	lib/jna-platform-4.1.0.jar	/^ .tlb, com.sun.jna.platform.win32.COM.tlb.imp, com.sun.jna.platform.wi$/;"	external variable declarations
+convertStreamToString	Demo.java	/^ private static String convertStreamToString(InputStream is) {$/;"	m	class:Demo	file:
+createRequest	AccessServiceImpl.java	/^ private static HttpRequestBase createRequest(URL url, Header header,$/;"	m	class:AccessServiceImpl	file:
+d	AccessServiceImpl.class	/^/;"	external variable declarations
+delete	Demo.java	/^ public static void delete(String ak, String sk, String requestUrl) {$/;"	m	class:Demo
+format	.tags	/^!_TAG_FILE_FORMAT	2	\/extended format; --format=1 will not append ;" to lines\/$/;"	external variable declarations
+get	Demo.java	/^ public static void get(String ak, String sk, String requestUrl) {$/;"	m	class:Demo
+getAk	AccessService.java	/^    public String getAk() {$/;"	m	class:AccessService
+getRegion	AccessService.java	/^    public String getRegion() {$/;"	m	class:AccessService
+getServiceName	AccessService.java	/^    public String getServiceName() {$/;"	m	class:AccessService
+getSk	AccessService.java	/^    public String getSk() {$/;"	m	class:AccessService
+h	AccessServiceImpl.class	/^/;"	external variable declarations
+main	Demo.java	/^ public static void main(String[] args) {$/;"	m	class:Demo
+patch	Demo.java	/^ public static void patch(String ak, String sk, String requestUrl,$/;"	m	class:Demo
+post	Demo.java	/^ public static void post(String ak, String sk, String requestUrl,$/;"	m	class:Demo
+put	Demo.java	/^ public static void put(String ak, String sk, String requestUrl,$/;"	m	class:Demo
+region	AccessService.java	/^    protected String region = null;$/;"	f	class:AccessService
+region	Demo.java	/^ private static final String region = "eu-de";$/;"	f	class:Demo	file:
+serviceName	AccessService.java	/^    protected String serviceName = null;$/;"	f	class:AccessService
+serviceName	Demo.java	/^ private static final String serviceName = "serviceName";$/;"	f	class:Demo	file:
+setAk	AccessService.java	/^    public void setAk(String ak) {$/;"	m	class:AccessService
+setRegion	AccessService.java	/^    public void setRegion(String region) {$/;"	m	class:AccessService
+setServiceName	AccessService.java	/^    public void setServiceName(String serviceName) {$/;"	m	class:AccessService
+setSk	AccessService.java	/^    public void setSk(String sk) {$/;"	m	class:AccessService
+sk	AccessService.java	/^    protected String sk = null;$/;"	f	class:AccessService
+un.jna.platform.mac	lib/jna-platform-4.1.0.jar	/^ un.jna.platform.mac, com.sun.jna.platform.unix, com.sun.jna.platform.$/;"	external variable declarations
+win32	lib/jna-platform-4.1.0.jar	/^ win32, com.sun.jna.platform.win32.COM, com.sun.jna.platform.win32.COM$/;"	external variable declarations
+~	lib/commons-logging-1.2.jar	/^û™`ÓT~´2°,?¡„U@yvÈã¸MTf«ˆfâ¤÷aÄcn“ï°o7Ç!¿`˜²ƒFùÍx|€Æ#.ssÀã6Åc¦Íƒ¥î±xğYœöcô‡NSnˆŸÄ]ğÉ•É,k„f¡`×išœ3BsC_¢™F(_*¥yÁù#Tp—–V.ò}š*Ê2 ¥u#•yaÿù[‚”\\ ğàB¹ÒqÊ	e€ã0.ø ?xå S:ƒ‹Ç/;"	external variable declarations
+Ã	AccessService.class	/^/;"	external variable declarations
+ÒÂÃ	lib/java-sdk-core-2.0.5.jar	/^–ê..>nyT,Õ=èÈnª½ê#O€oÂ·xTó,T÷£±}6T†±oÃıº±Åø›œœöæò¬q"Zyhoˆ½dg²½&">İuK+€^­€¯=	ğıàä,¡!Ç»èÚ{àq¼¯šš¥©›î©KA­ÑÓÒõà»ºùvÔ&ı¿¯v>Áb;Ë ßYe·À´[`Ú-0í>ÈM,3fç|nX÷óË&¬ÎÈsvÚ„õ{z.ø>?±|ÒÂ'£±u6a5Œı€{Xk™ÃêLs©Â—“6¹Q÷¤<™ï@l8ïÈò¥Ğô¥–ÃÕµd×&İœÇï;	¸ÚÂ¶ííÊ²ç1íyÔ?F½ÃOL6‡ÉVõ(Ã¶—Ëv/;"	external variable declarations
+Ó	lib/jna-platform-4.1.0.jar	/^±/;"	external variable declarations
+Õ	.tags	/^ÒÂÃ	lib\/java-sdk-core-2.0.5.jar	\/^–ê..>nyT,Õ=èÈnª½ê#O€oÂ·xTó,T÷£±}6T†±oÃıº±Åø›œœöæò¬q"Zyhoˆ½dg²½&">İuK+€^­€¯=	ğıàä,¡!Ç»èÚ{àq¼¯šš¥©›î©KA­ÑÓÒõà»ºùvÔ&ı¿¯v>Áb;Ë ßYe·À´[`Ú-0í>ÈM,3fç|nX÷óË&¬ÎÈsvÚ„õ{z.ø>?±|ÒÂ'£±u6a5Œı€{Xk™ÃêLs©Â—“6¹Q÷¤<™ï@l8ïÈò¥Ğô¥–ÃÕµd×&İœÇï;	¸ÚÂ¶ííÊ²ç1íyÔ?F½ÃOL6‡ÉVõ(Ã¶—Ëv\/;"	external variable declarations$/;"	external variable declarations
+×	lib/httpcore-4.4.6.jar	/^orÖ—¾ÒÈ=åõYWš„fHŞjhæïŒ0—¸Ğ £—ı¶ó¿‡+;Ø7È[€}$/;"	external variable declarations
+ì	lib/java-sdk-core-2.0.5.jar	/^ä:í,ZYŠì¿€=gí$/;"	external variable declarations
+í	lib/java-sdk-core-2.0.5.jar	/^ä:í,ZYŠì¿€=gí$/;"	external variable declarations
+íú	lib/httpcore-4.4.6.jar	/^¾À†¥¯ö‚5x›dÙk'Tí¬LA=$\\Uğ%¾âRmR°»|k¤F>N»nÄUÓÔú- ×ñ/;"	external variable declarations
+ó	lib/httpcore-4.4.6.jar	/^orÖ—¾ÒÈ=åõYWš„fHŞjhæïŒ0—¸Ğ £—ı¶ó¿‡+;Ø7È[€}$/;"	external variable declarations
+óV	lib/httpcore-4.4.6.jar	/^&TÒBm!-%)eü²Mw’Åë]¼ìu†ÿJg¤8:ãøÙ?Êñİ»m’6©c”·?Ş}ßçyíŞŸıú;€Ô²GÉB9‹1”28‹i,fñ5¦QÑÂ%=,ëá‘ëaÅÂ7V-¬YxÂ`íqÕh‰€¡Xõƒ¦ÃÛœ¶NK©¶Ó|å7|×yÈM®”¼õX»Ä©Ë¦ÇU†W#˜–OÖ]¥]MüŠZåŞ®K<‹Ä”*KOªE†D~v›!¹ìïçxUzb#ÜÛÁßqI’«ú/;"	external variable declarations
+ùÏÉÚÓÊ	lib/httpclient-win-4.5.3.jar	/^?´¶ïË^?òùĞ†ş±Tşk©:úxĞ]m%·¢Iº¨òÀjóÎİ*0‚¶j…Rßh«ùÏÉÚÓÊŠ·¶´=#ŸU¦aÂ&¨LÄ[eH7õĞ¢*İ¿mœ{ë—=†Õ—CeeOÔÔH$å¤¬”¶ÜJ­(\/›³×œº}w¬!›²!% C5`Ø9\/¦õSW!Im\\pmÿU«\\©?Ë`›¤fØı—Šlºã`[¥ÿ¨,ÃÒ¯{Ñ>#ÿ‡Ê=’aâ×ù3õ¬ÖÅ:½sôå\\èõÄh=dUÉÑœ.€ï}BìÃX“¥1K$/;"	external variable declarations

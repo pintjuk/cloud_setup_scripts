@@ -1,0 +1,2 @@
+ #! /bin/bash 
+java -classpath .:lib/httpclient-4.5.3.jar:lib/httpcore-4.4.6.jar:lib/java-sdk-core-2.0.5.jar:lib/commons-logging-1.2.jar:lib/jackson-databind-2.8.8.jar:lib/jackson-core-2.8.8.jar:lib/jackson-annotations-2.8.0.jar:lib/joda-time-2.9.9.jar Demo $1 $2 $3
