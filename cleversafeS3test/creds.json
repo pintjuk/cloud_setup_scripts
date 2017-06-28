@@ -1,0 +1,8 @@
+{
+	"host": "s3://bucket.service.domain.org",
+	"public_host": "s3://bucket.service.domain.org",
+	"aws_access_key_id": "",
+	"aws_secret_access_key": "ueaa",
+	"username": "QWKZSO0UCURY3RMUWJAG",
+        "password": "534NseG7J7uakUIfVzTvkMSOjAHKl62sSghYPcAx"
+}
