@@ -43,6 +43,8 @@ In juli the first contractor made there platform avalrable for S3 tests. later i
 
 In june
 
+
+No results will be presented as they are confidential.
 * Backgroud 
 
 ** Object storage 
@@ -56,13 +58,22 @@ Federated Authentication Is the means of linking a persons identety to accounts 
 EduGAIN is the Federated Authentication network that CERN and most Univerceties are part of.
 
 * Test description
+** S3 test
 
-* Test Setup
+The S3 test consists on a script that attempts the following operations on specified S3 hosts:
 
-* Results
-** Tests
+    S3 authentication (access key + secret key)
+    PUT
+    GET
+    GET with prefix matching
+    GET chunk
+    GET  multiple chunks
 
-*** Eudigan AAI
+For more information, aswell as the davix based test script: https://gitlab.cern.ch/okeeble/s3test/tree/master
+
+aws based s3test script: http://cern.ch/stikked/view/a326d01a
+
+** Eudigan AAI
 These tests relate to evaluating compliance with edugain login 
 requirements. 
 
@@ -105,75 +116,89 @@ The tests will be documented in a table with following columns:
 |------+-----+--------+--------------------+---------|
 |  ... |     |        |                    |         |
 
-**** TODO Assessment Criteria (Score 0-5):
 
-*** VM Provisioning Validation
-This test consists of a script that checks weather the VM was correctly initilized.
+* Description of how the tests ware preformed
 
-source code for this test can be found on \cite{provision}
+** S3 test
+Setup
+IBM
 
-
-**** TODO Implementation details
-
-**** TODO Assessment Criteria  
+the davix client does not work with IBM, aws s3api was used instead. A modified version of the davix based script was used where all the davix commands ware replaced by equivalent aws s3api commands.
 
 
-*** CERN Benchmark Suite
+    Not yet possible for us to manage buckets, and access keys. So IBM created a test bucket emailed us the keys and endpoint url.
+    Created a blumix VM  with the HN.sh comand line tool, with following parameters.
+        CPU: 1
+        Memory: 1024MB
+        Image: CENTOS_LATEST_64
+    Installed aws s3api, configured aws credentials with the keys and endpoint url received from IBM.
+    executed the aws based s3test script.
 
-CERN benchmark suit is a sequence of benchmarks executed on a VM. Results are sent as JASON messages to an ActiveMQ broker. Source code can be found on \cite{benchmark}
+RHEA
+T-Systems
 
-**** TODO Specific test configured
-
-**** TODO Assessment Criteria (Score 0-5):
-
-*** S3 endpoint test
-Is a script that attempts the following operations on a specified S3 host
-  - S3 authentication (access key + secret key)
-  - PUT
-  - GET
-  - GET with prefix matching
-  - GET chunk
-  - GET multiple chunks
-
-source for this tests can be found on \cite{s3test}  
-**** TODO Specific test configured
-     
-**** TODO Assessment Criteria (Score 0-5):
+    Created a bucket in OBS section of MyWorkspace dashboard with following parameters:
+        Class: Standard
+    Created an ECS VM on MyWorkspace dashboard with following parameters:
+        ECS type: General-Purpose
+        vCPU: 1
+        Memory: 4GB
+        Image: Standard_CentOS_7_latest
+    Installed davix client on the VM, cloned S3 endpoint test, and configured the s3 host to be the newly created bucket using the URL: s3://testbucket.obs.otc.t-systems.com
+    Executed the script in S3 endpoint test repository
 
 
- #+ATTR_LATEX: :environment tabular  :align | p{10cm}|l|c| 
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | condition                                                                                           | score |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | no operations supported                                                                             |     0 |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | 2 out of AuthC, PUT, GET not supported                                                              |     1 |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | If any of AuthC, PUT or GET are not supported                                                       |     2 |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | If AuthC , PUT and GET are supported                                                                |     3 |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | If AuthC, PUT and GET are  supported  +  oneof  the  2  (GET  with  prefix  matching or GET chunk ) |     4 |
-  |-----------------------------------------------------------------------------------------------------+-------|
-  | If AuthC, PUT and GET are supported + GET with prefix matching and GET chunk                        |     5 |
-  |-----------------------------------------------------------------------------------------------------+-------|
+** Auth AAI tests
+RHEA
+Test 1
 
-* Results
+3 August 2017
 
-** T-Systems, Huawei, Cyfronet, Divia   
-*** Eudigan AAI
-#+ATTR_LATEX: :environment tabular  :align |r|c|c|c|c| 
-|------+-----+--------+--------------------+---------|
-| test | idP | Result | Matches reference? | Comment |
-|------+-----+--------+--------------------+---------|
-*** S3 endpoint test
+    Using my CERN eduGAIN account an account was created on nuv.la following the instructions on: http://hn-prototype-docs.readthedocs.io/en/latest/administrator/index.html
+    After receiving administrative rights, I successfully logged in to fed-id.nuv.la/auth/. Selecting CERN Realm and CERN IDP. There i was able to check the attributes of my user account against the R&S specification. The required R&S ware present and correct.
 
-** IBM
-** T-Systems, Huawei, Cyfronet, Divia
-** IBM
-** RHEA Group, T-Systems, exoscale, Sixsq
-* Evaluation
+11 August 2017
 
+Something changed and this test fails
+
+    Using my CERN account attempted to login to fed-id.nuv.la. selecting CERN realm and CERN idp.
+    After successfully being authenticated by CERN I am redirected to the IDP selection page on nuv.la rather then being granted access to the administration portal.
+
+25 August 2017
+
+The issue hove been , and the test passes again
+
+(Serns SAML server does not support the Scope tag)
+Test 3
+
+4 August 2017
+
+    In CERNs user settings portal I changed my primary email address to the email address of my KTH account.
+    I attempted to login to fed-id.nuv.la using my CERN account, It authenticated successfully just like before the change. However It did not fetch the new email address from CERN idP, since this account was already registered in fed-id.nuv.la.
+    I attempted to login to fed-id.nuv.la using my KTH account, It authenticated successfully just like before the change to a separate user from the previous one.
+    This test is probably not valid, since there was already 2 accounts registered in fed-id.nuv.la one for my CERN account and one for my KTH account and the email address of the accounts was not updated. This test should probably be performed with 2 accounts never used to login to fed-id.nuv.la before.
+
+
+Test 6 & 7
+
+3 August 2017
+
+    A Collogue used there CERN eduGain account to login to nuv.la and fed-id.nuv.la, following the instructions on: http://hn-prototype-docs.readthedocs.io/en/latest/administrator/index.html. Authentication of both web portals was successfully.
+    Using my administrative account on fed-id.nuv.la I blocked my collogues account by adding it to the black list as described in http://hn-prototype-docs.readthedocs.io/en/latest/administrator/blacklisting.html
+    My collogue used there blocked account to attempt a login to fed-id.nuv.la, authentication was unsuccessful.
+    My collogue used there blocked account to attempt a login to. nuv.la,  Authentication was successful. (Is this intended?)
+
+
+   
+OTC
+Test 1
+
+15 August 2017
+
+    Attempted To login through URL https://auth.otc.t-systems.com/authui/federation/websso?domain_id=3234c5a8b91040eb895dfa86a892ebf9&idp=CERN&protocol=saml
+    Rederected To CERN authentication portal
+    After authentication redirected to OTC webpage with error message:
+    The browser detects that another contract is opening. This contract will be closed
 
 #+LATEX: \bibliographystyle{plain}
 #+LATEX: \bibliography{refs}
