@@ -23,9 +23,15 @@
 
 
 * TODO Introduction
+During my time att CERN join the HNScieCloud PCP project. A Pre commercial Procurmet tender to develop a cloud platform to support high proframnce computting and big data capabilitis for scientific research.
 
-Report for testperioud 2
+When I joined the project was moving into the stage of testing protote platforms from the 3 contractos: 
 
+1) T-systems, Huawell, Cyfront, Divia
+2) IBM
+3) RHEA Group, T-systems, exoscale, SixSq
+
+My contribution was going to be to preform tests 
 ** Assessment Criteria
 The scores to assess the results of the tests are defined as follows:
 #+ATTR_LATEX: :environment tabular :align |l|c|
@@ -157,7 +163,6 @@ source for this tests can be found on \cite{s3test}
 |------+-----+--------+--------------------+---------|
 | test | idP | Result | Matches reference? | Comment |
 |------+-----+--------+--------------------+---------|
-*** CERN Benchmark Suite
 *** S3 endpoint test
 
 ** IBM
