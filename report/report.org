@@ -31,32 +31,35 @@ When I joined the project was moving into the stage of testing protote platforms
 2) IBM
 3) RHEA Group, T-systems, exoscale, SixSq
 
-My contribution was going to be to preform tests 
-** Assessment Criteria
-The scores to assess the results of the tests are defined as follows:
-#+ATTR_LATEX: :environment tabular :align |l|c|
-|---+--------------------------------------------------------------------------------|
-| 0 | Completely fails to demonstrate  the required capacity and capability for the  |
-|   | defined requirements domain                                                    |
-|---+--------------------------------------------------------------------------------|
-| 1 | Significantly fails to demonstrate required capacity and capability for the    |
-|   | defined requirements domain.                                                   |
-|---+--------------------------------------------------------------------------------|
-| 2 | Shows partial evidence of capacity and capability for the defined requirements |
-|   | domain                                                                         |
-|---+--------------------------------------------------------------------------------|
-| 3 | Shows evidence of capability and capacity for the defined requirements domain  |
-|---+--------------------------------------------------------------------------------|
-| 4 | Shows evidence of capacity and capability that completely meet the defined     |
-|   | requirements domain                                                            |
-|---+--------------------------------------------------------------------------------|
-| 5 | Shows evidence of capacity and capability that systematically exceeds the      |
-|   | defined requirement domain                                                     |
-|---+--------------------------------------------------------------------------------|
+My contribution was going to be to preform 2 of CERN's tests sets of the prototypes.
 
+The prototypes ware requiered to provide Object Storage (OBS), and support a subset of S3 api for operations on the object storage. The purpos of the first set of tests was to validate that the S3 API for the object storage was implemented correctly.
 
-* Method
+It was also requiered that the prototypes supported Federated Authentication through EduGAIN. So that users of HNSciCloud could ue there home Univercity credentials to access the services of HNSciCloud. The second set, consisted of tests to ensure correct beheviour of of this system.
 
+During the first month of the project the prototype phase had not started yet. So I used the time to get up to speed on the project and learning the tools i was going to use for the tests. I ran S3 tests against CERNS openstack service.
+
+In juli the first contractor made there platform avalrable for S3 tests. later in july T-systems and RHEA made there Federated Authentictaion portals avalable for testing. IBM never provided any Federated Authentication during my stay at CERN.
+
+In june
+
+* Backgroud 
+
+** Object storage 
+Object storage is a computer data storage architecture that manages data as objects, as opposed to other storage architectures like file systems which manage data as a file hierarchy and block storage which manages data as blocks within sectors and tracks. Each object typically includes the data itself, a variable amount of metadata, and a globally unique identifier.
+
+S3 is an API for operations on the object storage, eg: creating a bucket (objects are organized into containers called buckets), uploading objects into the bucket, downloading objects from a bocket, deleting objects, etc.
+
+** Federated Authentication and Single Sign-on
+Federated Authentication Is the means of linking a persons identety to accounts and data stored accross multiple systems and organizations. Single Sign-on is a part of Federated Authentication that enables a service provider from one organization to delegate web based authentication to another organization. For example this allowes a CERN researcher to login to a HNScieCloud service managed by an external contractor using his CERN computing account.
+
+EduGAIN is the Federated Authentication network that CERN and most Univerceties are part of.
+
+* Test description
+
+* Test Setup
+
+* Results
 ** Tests
 
 *** Eudigan AAI
